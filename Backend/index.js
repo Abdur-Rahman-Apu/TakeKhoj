@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config({ path: "../.env" });
 const DbConnection = require("./Config/dbConnect");
 const userRoutes = require("./Routes/userRoutes");
+const chatRoutes = require("./Routes/chatRoutes");
 const { notFound, errorHandler } = require("./Middlewares/errorMiddleware");
 
 const app = express();
@@ -20,6 +21,7 @@ app.get("/", async (req, res) => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -11,7 +11,9 @@ const chatModel = mongoose.Schema(
     },
     groupAdmin: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
-  { timestaps: true }
+  { timestamps: true }
 );
 
 const Chat = mongoose.model("Chat", chatModel);
+
+module.exports = Chat;
